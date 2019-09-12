@@ -1,0 +1,9 @@
+[user]
+	email = j@jeffreygough.com
+	name = Jeff Gough
+[push]
+	default = simple
+[diff]
+	tool = meld
+[merge]
+	conflictstyle = diff3
