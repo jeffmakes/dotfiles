@@ -11,3 +11,5 @@ fi
 # User specific aliases and functions
 . ~/bin/cdp.sh
 alias config='/usr/bin/git --git-dir=/home/jeff/.cfg/ --work-tree=/home/jeff'
+alias signal='flatpak run org.signal.Signal'
+alias texttopdf='unoconv'
