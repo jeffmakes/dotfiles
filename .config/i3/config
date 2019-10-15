@@ -197,4 +197,5 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86MonBrightnessUp exec light -A 5
 bindsym XF86MonBrightnessDown exec light -U 5
 
+# Screen lock
 bindsym $mod+Mod1+l exec i3lockr --blur 20 --icon ~/.i3/lock.png --ignore-monitors 1 -- --ignore-empty-password 
