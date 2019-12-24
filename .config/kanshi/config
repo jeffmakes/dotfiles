@@ -3,13 +3,16 @@ lounge {
   output "Unknown MAG321CURV DA2A019160072" mode 3840x2160@30Hz position 0,0
   output "Samsung Electric Company U28E590 HTPJ203148" mode 3840x2160@30Hz position 3840,0
   exec swaymsg "output \"Unknown MAG321CURV DA2A019160072\" mode 3840x2160@30Hz"  # hack - for some reason kanshi can't set the freq
+  exec swaymsg "output \"Samsung Electric Company U28E590 HTPJ203148\" mode 3840x2160@30Hz"  # hack - for some reason kanshi can't set the freq
   exec swaymsg workspace 1, move workspace to output '"Unknown MAG321CURV DA2A019160072"'
   exec swaymsg workspace 2, move workspace to output '"Samsung Electric Company U28E590 HTPJ203148"'
   exec swaymsg workspace 3, move workspace to output eDP-1
-
-
+  exec swaymsg gaps inner all set 30
+  exec swaymsg gaps inner 30
 }
 
 mobile {
   output eDP-1 position 0,0
+  exec swaymsg gaps inner all set 10
+  exec swaymsg gaps inner 10
 }
