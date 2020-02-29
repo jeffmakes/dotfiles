@@ -206,16 +206,17 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 50px
+    bindsym $down resize grow height 50px
+    bindsym $up resize shrink height 50px
+    bindsym $right resize grow width 50px
 
     # Ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 50px
+    bindsym Down resize grow height 50px
+    bindsym Up resize shrink height 50px
+    bindsym Right resize grow width 50px
+    
 
     # Return to default mode
     bindsym Return mode "default"
@@ -224,9 +225,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume  @DEFAULT_SINK@ -10% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume  @DEFAULT_SINK@ -10% #decrease sound volume
+bindsym XF86AudioMute exec up-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5
@@ -255,7 +256,7 @@ bar {
 
 # General settings
 #exec_always swaymsg gaps inner all set 30
-gaps inner 30
+gaps inner 20
 
 # Start-up applications
 exec kanshi-start  # automatic hotplug display configuration daemon. config in ~/.config/kanshi
