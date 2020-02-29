@@ -261,5 +261,6 @@ gaps inner 20
 # Start-up applications
 exec kanshi-start  # automatic hotplug display configuration daemon. config in ~/.config/kanshi
 exec mako    # notification daemon
+exec syncthing -no-browser -home="~/.config/syncthing"
 
 include /etc/sway/config.d/*
