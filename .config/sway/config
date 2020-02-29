@@ -22,12 +22,12 @@ set $menu rofi -show run | xargs swaymgs exec --
 set $alt_menu rofi -show drun | xargs swaymgs exec --
 
 # Lock command
-set $lock swaylock --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00
+set $lock 'swaylock --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00'
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/f30/default/normalish/f30.png fill
+output * bg ~/tools/sway/wallpapers/iceland1.jpg fill
 #
 # Example configuration:
 #
@@ -49,10 +49,10 @@ output * bg /usr/share/backgrounds/f30/default/normalish/f30.png fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-         timeout 300 $lock \
-         timeout 600 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep $lock
+         timeout 900 $lock 
+exec swayidle -w \
+         timeout 1200 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' 
 
 ### Input configuration
 #
@@ -98,6 +98,7 @@ exec xset r 66 # enable auto-repeat on capslock (backspace)
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym Ctrl+Mod1+backspace exec swaymsg exit
 #
 # Moving around:
 #
@@ -252,7 +253,12 @@ bar {
     }
 }
 
+# General settings
+#exec_always swaymsg gaps inner all set 30
+gaps inner 30
+
 # Start-up applications
-exec kanshi  # automatic hotplug display configuration manager. config in ~/.config/kanshi
+exec kanshi-start  # automatic hotplug display configuration daemon. config in ~/.config/kanshi
+exec mako    # notification daemon
 
 include /etc/sway/config.d/*
