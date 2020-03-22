@@ -5,3 +5,6 @@ powerline-setup
 function config
 	command /usr/bin/git --git-dir=/home/jeff/.cfg/ --work-tree=/home/jeff $argv
 end
+
+set --export PATH $HOME/.local/bin $HOME/bin $PATH
+
