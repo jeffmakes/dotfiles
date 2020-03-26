@@ -259,7 +259,7 @@ bar {
 gaps inner 20
 
 # Start-up applications
-exec kanshi-start  # automatic hotplug display configur:ation daemon. config in ~/.config/kanshi
+exec kanshi  # automatic hotplug display configuration daemon. config in ~/.config/kanshi
 exec mako    # notification daemon
 exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 
