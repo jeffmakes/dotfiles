@@ -1,3 +1,6 @@
+# To make a new profile, plug in the monitor, and run wdisplays. Arrange the displays how you want them, then write a block like those below.
+# To get the monitor's name, run swaymsg -t get_outputs
+
 lounge {
   output eDP-1 position 960,2160
   output "Unknown MAG321CURV DA2A019160072" mode 3840x2160@30Hz position 0,0
