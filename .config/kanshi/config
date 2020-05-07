@@ -1,7 +1,7 @@
 # To make a new profile, plug in the monitor, and run wdisplays. Arrange the displays how you want them, then write a block like those below.
 # To get the monitor's name, run swaymsg -t get_outputs
 
-lounge {
+profile lounge {
   output eDP-1 position 960,2160
   output "Unknown MAG321CURV DA2A019160072" mode 3840x2160@30Hz position 0,0
   output "Samsung Electric Company U28E590 HTPJ203148" mode 3840x2160@30Hz position 3840,0
@@ -14,7 +14,7 @@ lounge {
   #exec swaymsg gaps inner 30
 }
 
-lounge-parents {
+profile lounge-parents {
   output eDP-1 mode 1920x1080@59.999001Hz position 0,2160 
   output "Samsung Electric Company U28E590 HTPJ203148" mode 3840x2160@30Hz position 0,0
   # exec swaymsg "output \"Samsung Electric Company U28E590 HTPJ203148\" mode 3840x2160@30Hz"  # hack - for some reason kanshi can't set the freq
@@ -23,7 +23,7 @@ lounge-parents {
 }
 
 
-mobile {
+profile mobile {
   output eDP-1 position 0,0
   #exec swaymsg gaps inner all set 10
   #exec swaymsg gaps inner 10
