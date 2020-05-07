@@ -49,12 +49,17 @@ output * bg ~/tools/sway/wallpapers/iceland1.jpg fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-exec swayidle -w \
-         timeout 10 $lock \
-         timeout 20 'swaymsg "output * dpms off"' \
-              resume 'swaymsg "output * dpms on"' \
-         before-sleep $lock
+##### DPMS crashes sway at the moment...
+#exec swayidle -w \
+#         timeout 10 $lock \
+#         timeout 20 'swaymsg "output * dpms off"' \
+#              resume 'swaymsg "output * dpms on"' \
+#         before-sleep $lock
 
+#Version without DPMS:
+exec swayidle -w \
+         timeout 600 $lock \
+         before-sleep $lock
 
 ### Input configuration
 #
