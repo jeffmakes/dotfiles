@@ -12,3 +12,4 @@ fi
 . ~/bin/cdp.sh
 alias config='/usr/bin/git --git-dir=/home/jeff/.cfg/ --work-tree=/home/jeff'
 alias texttopdf='unoconv'
+
