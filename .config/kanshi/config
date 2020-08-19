@@ -22,6 +22,12 @@ profile lounge-parents {
   exec swaymsg workspace 2, move workspace to output eDP-1
 }
 
+profile bedroom {
+  output eDP-1 mode 1920x1080@59.999001Hz position 0,1080
+  output "Goldstar Company Ltd LG ULTRAWIDE 0x00000101" mode 2560x1080@60Hz position 0,0
+  exec swaymsg workspace 1, move workspace to output '"Goldstar Company Ltd LG ULTRAWIDE 0x00000101"'
+  exec swaymsg workspace 2, move workspace to output eDP-1
+}
 
 profile mobile {
   output eDP-1 position 0,0
