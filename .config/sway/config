@@ -234,7 +234,9 @@ bindsym $mod+r mode "resize"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume  @DEFAULT_SINK@ -10% #decrease sound volume
-bindsym XF86AudioMute exec up-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+#bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
+bindsym XF86AudioMute exec /home/jeff/projects/2020/sound-switcher/switcher.py
+
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5
@@ -247,18 +249,21 @@ bindsym $mod+Mod1+l exec $lock
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+#bar {
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+#
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+#}
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
 # General settings
