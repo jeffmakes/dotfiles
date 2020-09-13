@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "Ubuntu Nerd Font";
+    font-family: "Source Code Pro";
     font-size: 13px;
     min-height: 0;
 }
@@ -13,7 +13,7 @@ window#waybar {
 
 #window {
     font-weight: bold;
-    font-family: "Ubuntu";
+    /* font-family: "Source Code Pro"; */
     margin: 0 10px;
 }
 /*
@@ -32,8 +32,22 @@ window#waybar {
 #workspaces button.focused {
     font-weight: bold;
     color: #0091e6;
-    border-top: 2px solid #0091e6;
+    border-top: 4px solid #0091e6;
 }
+
+#workspaces button.visible {
+    font-weight: bold;
+    color: #0091e6;
+    /* border-top: 2px solid #0091e6;*/
+}
+
+#workspaces button.urgent {
+    font-weight: bold;
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.2);
+    /* border-top: 2px solid #0091e6;*/
+}
+
 
 #mode {
     background: #64727D;

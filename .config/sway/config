@@ -31,7 +31,8 @@ set $lock '/home/jeff/tools/sway/swaylock-effects/build/swaylock -f --screenshot
 set $bg #4c232425 
 set $fg #d2d2d2
 set $br #005c93be
-set $ia #ffb700
+set $ia #ffb700be
+set $ur #ff0000
 #4c232425
 #swaymsg client.focused "#005c93" "#005c9e" "#d2d2d2" "#ffb700" "#005c93"
 
@@ -41,7 +42,7 @@ client.focused          $br     $br     $fg     $ia       $br
 client.focused_inactive $bg     $bg     $fg     $ia       $bg
 client.unfocused        $bg     $bg     $fg     $ia       $bg
 # Xwayland only:
-client.urgent           $br     $br     $fg     $ia       $br 
+client.urgent           $ur     $ur     $fg     $ia       $br 
 #client.placeholder     $br     $br     $fg     $bg       $br # Ignored
 
 ## Border
