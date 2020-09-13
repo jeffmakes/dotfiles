@@ -24,6 +24,30 @@ set $alt_menu rofi -m -4 -show run | xargs swaymsg exec --
 # Lock command
 set $lock '/home/jeff/tools/sway/swaylock-effects/build/swaylock -f --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00'
 
+
+## Colors, etc.
+# Set colors
+#set $bg #11171717
+set $bg #4c232425 
+set $fg #d2d2d2
+set $br #005c93be
+set $ia #ffb700
+#4c232425
+#swaymsg client.focused "#005c93" "#005c9e" "#d2d2d2" "#ffb700" "#005c93"
+
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $br     $br     $fg     $ia       $br
+client.focused_inactive $bg     $bg     $fg     $ia       $bg
+client.unfocused        $bg     $bg     $fg     $ia       $bg
+# Xwayland only:
+client.urgent           $br     $br     $fg     $ia       $br 
+#client.placeholder     $br     $br     $fg     $bg       $br # Ignored
+
+## Border
+default_border normal 5
+
+
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
