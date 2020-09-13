@@ -26,7 +26,7 @@ window#waybar {
     padding: 0 5px;
     background: rgba(0, 0, 0, 0.1);
     color: white;
-    border-top: 2px solid transparent;
+    border-top: 4px solid transparent;
 }
 
 #workspaces button.focused {
@@ -38,16 +38,22 @@ window#waybar {
 #workspaces button.visible {
     font-weight: bold;
     color: #0091e6;
-    /* border-top: 2px solid #0091e6;*/
+    /* border-top: 4px solid #0091e6;*/
 }
 
 #workspaces button.urgent {
     font-weight: bold;
     color: #ff0000;
     background: rgba(255, 0, 0, 0.2);
-    /* border-top: 2px solid #0091e6;*/
+    /* border-top: 4px solid #0091e6;*/
 }
 
+#workspaces button.urgent.visible {
+    font-weight: bold;
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.2);
+    border-top: 4px solid #ff0000;
+}
 
 #mode {
     background: #64727D;
