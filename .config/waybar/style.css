@@ -24,14 +24,15 @@ window#waybar {
 
 #workspaces button {
     padding: 0 5px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
     color: white;
     border-top: 2px solid transparent;
 }
 
 #workspaces button.focused {
-    color: #009ecf;
-    border-top: 2px solid #009ecf;
+    font-weight: bold;
+    color: #0091e6;
+    border-top: 2px solid #0091e6;
 }
 
 #mode {
