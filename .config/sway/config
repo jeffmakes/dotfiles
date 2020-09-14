@@ -263,6 +263,7 @@ bindsym $mod+r mode "resize"
 bindsym XF86AudioRaiseVolume exec volumectl raise
 bindsym XF86AudioLowerVolume exec volumectl lower
 bindsym XF86AudioMute exec /home/jeff/projects/2020/sound-switcher/switcher.py
+bindsym XF86AudioMicMute exec amixer set Capture toggle
 
 # avizo provides a little popover window to display volume level when it's adjusted
 for_window [app_id="avizo-service"] border pixel 0
