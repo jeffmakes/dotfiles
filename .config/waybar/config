@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode", "custom/media"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "temperature", "battery", "battery#bat2", "clock", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -65,11 +65,13 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+	"interval": "1",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%Y-%m-%d}",
+	"format": "{:%A %B %e %Y %H:%M:%S}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": " {usage}%",
         "tooltip": false
     },
     "memory": {
@@ -92,12 +94,12 @@
         "states": {
             // "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 10
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -107,22 +109,22 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": " ⚠Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         //"format": "{icon} {volume}% {format_source}",
-        "format": " {icon} {format_source}",
+        "format": " {icon} {volume}% {format_source}",
         //"format-bluetooth": "{volume}% {icon} {format_source}",
         //"format-bluetooth-muted": " {icon} {format_source}",
         //"format-muted": " {format_source}",
         //"format-source": "{volume}% ",
-        "format-source": "",
-	"format-source-muted": "",
+        "format-source": " {volume}%",
+	"format-source-muted": "    ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
