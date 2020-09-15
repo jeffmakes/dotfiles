@@ -55,8 +55,8 @@
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "tray": {
@@ -65,7 +65,7 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-	"interval": "10",
+	"interval": "1",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
 	"format": "{:%A %e %B %Y %H:%M:%S}"
