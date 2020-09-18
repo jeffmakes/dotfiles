@@ -260,8 +260,9 @@ bindsym $mod+r mode "resize"
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume  @DEFAULT_SINK@ -10% #decrease sound volume
 #bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-bindsym XF86AudioRaiseVolume exec volumectl raise
-bindsym XF86AudioLowerVolume exec volumectl lower
+set $volumectl /home/jeff/tools/sway/avizo/volumectl
+bindsym XF86AudioRaiseVolume exec $volumectl raise
+bindsym XF86AudioLowerVolume exec $volumectl lower
 bindsym XF86AudioMute exec /home/jeff/projects/2020/sound-switcher/switcher.py
 bindsym Shift+XF86AudioMute exec /home/jeff/projects/2020/sound-switcher/switcher.py --reverse
 bindsym XF86AudioMicMute exec amixer set Capture toggle
