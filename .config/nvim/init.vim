@@ -1,5 +1,5 @@
 syntax on
-
+set shell=/usr/bin/bash
 " Partially stolen config from ThePrimeagen's config https://github.com/erkrnt/awesome-streamerrc/blob/master/ThePrimeagen/init.vim
 set guicursor=
 set relativenumber
@@ -11,7 +11,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nu
-set nowrap
+"set nowrap
 set smartcase
 set noswapfile
 set nobackup
@@ -22,9 +22,10 @@ set termguicolors
 set scrolloff=8
 set noshowmode
 set completeopt=menuone,noinsert,noselect
-
+set wildmode=list:longest
 " Give more space for displaying messages.
 set cmdheight=2
+set mouse=a
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
