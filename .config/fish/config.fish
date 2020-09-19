@@ -3,7 +3,7 @@ source /usr/share/powerline/fish/powerline-setup.fish
 powerline-setup
 
 function config
-	command /usr/bin/git --git-dir=/home/$HOME/.cfg/ --work-tree=/home/$HOME $argv
+	command /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
 end
 
 set --export PATH $HOME/.local/bin $HOME/bin /var/lib/snapd/snap/bin $PATH
