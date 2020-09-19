@@ -9,7 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-. ~/bin/cdp.sh
-alias config='/usr/bin/git --git-dir=/home/jeff/.cfg/ --work-tree=/home/jeff'
+#. ~/bin/cdp.sh
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias texttopdf='unoconv'
 
