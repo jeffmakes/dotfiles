@@ -35,11 +35,12 @@ set updatetime=50
 set shortmess+=c
 
 call plug#begin()
-Plug 'gkapfham/vim-vitamin-onec'
-Plug 'sainnhe/sonokai'
-Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'gkapfham/vim-vitamin-onec'                    " colour scheme
+Plug 'sainnhe/sonokai'                              " colour scheme
+Plug 'mbbill/undotree'                              " undo tree - press leader-u
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy finder - :Files and friends
 Plug 'junegunn/fzf.vim'
+Plug 'ThePrimeagen/vim-be-good'                     " jumping training game
 
 "LSP plugins
 Plug 'nvim-lua/completion-nvim'
@@ -56,7 +57,7 @@ EOF
 
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 lua require'nvim_lsp'.clangd.setup{ on_attach=require'completion'.on_attach }
-lua require'nvim_lsp'.jedi_language_server.setup{}
+lua require'nvim_lsp'.jedi_language_server.setup{ on_attach=require'completion'.on_attach }
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -87,3 +88,8 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 " Display the colorscheme
 colorscheme sonokai 
+
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup END
