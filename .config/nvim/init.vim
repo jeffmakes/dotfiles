@@ -2,7 +2,7 @@ syntax on
 set shell=/usr/bin/bash
 " Partially stolen config from ThePrimeagen's config https://github.com/erkrnt/awesome-streamerrc/blob/master/ThePrimeagen/init.vim
 set guicursor=
-set relativenumber
+"set relativenumber
 set nohlsearch
 set hidden
 set noerrorbells
@@ -40,7 +40,42 @@ Plug 'sainnhe/sonokai'
 Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+"LSP plugins
+Plug 'nvim-lua/completion-nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+lua <<EOF
+require'nvim_lsp'.clangd.setup{}
+EOF
+
+lua <<EOF
+require'nvim_lsp'.jedi_language_server.setup{}
+EOF
+
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+lua require'nvim_lsp'.clangd.setup{ on_attach=require'completion'.on_attach }
+lua require'nvim_lsp'.jedi_language_server.setup{}
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 
 let mapleader = " "
 let g:sonokai_transparent_background = 1
