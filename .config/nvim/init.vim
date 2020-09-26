@@ -26,7 +26,7 @@ set wildmode=list:longest
 " Give more space for displaying messages.
 set cmdheight=2
 set mouse=a
-
+set clipboard^=unnamedplus
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=50
