@@ -86,6 +86,11 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
+
+"paste over selected text. (Delete selection and dump it in the black hole
+"register)
+vnoremap <leader>p "_dP
+
 " Display the colorscheme
 colorscheme sonokai 
 
