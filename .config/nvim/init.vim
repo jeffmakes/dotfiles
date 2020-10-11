@@ -91,6 +91,9 @@ nnoremap <leader>u :UndotreeShow<CR>
 "register)
 vnoremap <leader>p "_dP
 
+inoremap jk <Esc>
+inoremap kj <Esc>
+
 " Display the colorscheme
 colorscheme sonokai 
 
