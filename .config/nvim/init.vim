@@ -25,7 +25,7 @@ set completeopt=menuone,noinsert,noselect
 set wildmode=list:longest
 " Give more space for displaying messages.
 set cmdheight=2
-set mouse=a
+"set mouse=a
 set clipboard^=unnamedplus
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -41,7 +41,7 @@ Plug 'mbbill/undotree'                              " undo tree - press leader-u
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fuzzy finder - :Files and friends
 Plug 'junegunn/fzf.vim'
 Plug 'ThePrimeagen/vim-be-good'                     " jumping training game
-
+Plug 'airblade/vim-rooter'                          " finds project root by looking for a .git folder
 "LSP plugins
 Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
@@ -86,9 +86,10 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>= :wincmd =<CR>
+nnoremap <leader>o :wincmd o<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
-
+nnoremap <leader>f :Files<CR>
 "paste over selected text. (Delete selection and dump it in the black hole
 "register)
 vnoremap <leader>p "_dP
@@ -99,6 +100,7 @@ inoremap kj <Esc>
 " Display the colorscheme
 colorscheme sonokai 
 
+" Flash selection when it's yanked
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
