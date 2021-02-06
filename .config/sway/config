@@ -52,7 +52,7 @@ default_border normal 5
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/tools/sway/wallpapers/iceland1.jpg fill
+output * bg ~/tools/sway/wallpapers/ethprism-2560x1080.jpg center 
 #
 # Example configuration:
 #
