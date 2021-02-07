@@ -48,7 +48,7 @@ Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 lua <<EOF
-require'nvim_lsp'.clangd.setup{}
+require'lspconfig'.clangd.setup{}
 EOF
 
 lua <<EOF
