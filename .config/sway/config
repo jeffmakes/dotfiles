@@ -99,6 +99,9 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 #
 # Read `man 5 sway-input` for more information about this section.
+input "1130:45201:PixArt_Cherry_USB_Optical_Mouse" { 
+     pointer_accel -0.1
+}
 
 input * xkb_layout "gb"
 input *	xkb_options "caps:backspace"
