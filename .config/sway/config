@@ -285,6 +285,11 @@ bindsym XF86MonBrightnessDown exec lightctl lower
 # Screen lock
 bindsym $mod+Mod1+l exec $lock 
 
+# Print screen
+
+#bindsym Print :exec "slurp | grim -g - ~/media/screenshots/$(date +%Y-%m-%d_%H:%M).png "
+bindsym Print :exec "slurp | grim -g - ~/media/screenshots/ss.png && notify-send 'Screenshot' 'Saved to ~/media/screenshots' "
+
 #
 # Status Bar:
 #
@@ -322,4 +327,5 @@ exec mako                               # notification daemon
 exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 exec avizo-service                      # volume popup
 exec nm-applet --indicator              # network manager
+exec pulseaudio --start
 include /etc/sway/config.d/*
