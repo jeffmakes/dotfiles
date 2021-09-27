@@ -14,6 +14,13 @@ profile lounge {
   #exec swaymsg gaps inner 30
 }
 
+profile lounge-parents-msi {
+  output "Unknown MAG321CURV DA2A019160072" mode 3840x2160@30Hz position 0,0
+  output eDP-1 mode 1920x1080@59.999001Hz position 0,2160 
+  exec swaymsg workspace 1, move workspace to output '"Unknown MAG321CURV DA2A019160072"'
+  exec swaymsg workspace 2, move workspace to output eDP-1
+}
+
 profile lounge-parents {
   output eDP-1 mode 1920x1080@59.999001Hz position 0,2160 
   output "Samsung Electric Company U28E590 HTPJ203148" mode 3840x2160@30Hz position 0,0
