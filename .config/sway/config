@@ -18,8 +18,8 @@ set $term gnome-terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -m -4 -show run | xargs swaymsg exec --
-set $alt_menu rofi -m -4 -show drun | xargs swaymsg exec -- 
+set $menu rofi -m -4 -show run -theme Arc-Dark | xargs swaymsg exec --
+set $alt_menu rofi -m -4 -show drun -theme Arc-Dark | xargs swaymsg exec -- 
 
 # Lock command
 set $lock '/home/jeff/tools/sway/swaylock-effects/build/swaylock -f --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00'
