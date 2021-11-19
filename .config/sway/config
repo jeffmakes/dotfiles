@@ -106,6 +106,7 @@ input "1130:45201:PixArt_Cherry_USB_Optical_Mouse" {
 input * xkb_layout "gb"
 #input *	xkb_options "caps:backspace"
 # I am now using caps2esc, see http://nelsonware.com/blog/2019/04/30/how-to-map-caps-lock-to-escape-and-control-on-fedora-via-caps2esc.html and https://gitlab.com/interception/linux/plugins/caps2esc
+input *	xkb_options "caps:escape" # caps2esc now makes CapsLock ctrl (when held) and ESC (when tapped). This line makes ESC (which is now caps!) an extra ESC, to reduce confusion. 
 #exec xset r 66 # enable auto-repeat on capslock (backspace)
 
 ### Key bindings
