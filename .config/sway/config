@@ -22,7 +22,8 @@ set $menu rofi -m -4 -show run -theme Arc-Dark | xargs swaymsg exec --
 set $alt_menu rofi -m -4 -show drun -theme Arc-Dark | xargs swaymsg exec -- 
 
 # Lock command
-set $lock '/home/jeff/tools/sway/swaylock-effects/build/swaylock -f --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00'
+#set $lock '/usr/local/bin/swaylock -f --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00'
+set $lock 'swaylock -f --screenshots --effect-blur 7x5 --inside-color 00000088 --line-color abcdef00 --separator-color abcdef00'
 
 
 ## Colors, etc.
