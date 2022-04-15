@@ -141,7 +141,7 @@ input *	xkb_options "caps:escape"
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
     bindsym Ctrl+Mod1+backspace exec swaymsg exit
 
-    bindsym $mod+Shift+s exec swaynag -t warning -m 'Do you want to suspend?' -b 'Yes please.' 'echo mem | sudo tee /sys/power/state'
+    bindsym $mod+Shift+s exec swaynag -t warning -m 'Do you want to suspend?' --button-dismiss 'Yes please.' 'echo mem | sudo tee /sys/power/state'
 
 #
 # Moving around:
