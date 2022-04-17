@@ -29,10 +29,18 @@ profile lounge-parents {
   exec swaymsg workspace 2, move workspace to output eDP-1
 }
 
-profile bedroom {
+profile bedroom-3epm {
   output eDP-1 mode 1920x1080@59.999001Hz position 0,1080
   output "Goldstar Company Ltd LG ULTRAWIDE 0x00000101" mode 2560x1080@60Hz position 0,0
   exec swaymsg workspace 1, move workspace to output '"Goldstar Company Ltd LG ULTRAWIDE 0x00000101"'
+  exec swaymsg workspace 2, move workspace to output eDP-1
+}
+
+profile bedroom {
+  output eDP-1 mode 1920x1080@59.999Hz position 3840,2160 
+  output "Unknown MAG321CURV DA2A010700223" mode 3840x2160@30.000Hz position 0,0
+  output "Unknown MAG321CURV DA2A019160072" mode 3840x2160@30Hz position 3840,0
+  exec swaymsg workspace 1, move workspace to output '"Unknown MAG321CURV DA2A019160072"'
   exec swaymsg workspace 2, move workspace to output eDP-1
 }
 
@@ -41,3 +49,4 @@ profile mobile {
   #exec swaymsg gaps inner all set 10
   #exec swaymsg gaps inner 10
 }
+
