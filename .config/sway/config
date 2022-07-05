@@ -337,4 +337,6 @@ exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 exec avizo-service                      # volume popup
 exec nm-applet --indicator              # network manager
 exec pulseaudio --start
+exec lxpolkit                           # makes Gnome Keyring work
 include /etc/sway/config.d/*
+
