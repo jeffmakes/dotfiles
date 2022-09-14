@@ -6,5 +6,5 @@ function config
 	command /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $argv
 end
 
-set --export PATH $HOME/.local/bin $HOME/bin /var/lib/snapd/snap/bin $PATH
+set --export PATH $HOME/.local/bin $HOME/bin /var/lib/snapd/snap/bin /opt/ti/msp430/gcc/bin $PATH
 
