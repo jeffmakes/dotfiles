@@ -3,7 +3,8 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-
+#exec dbus-update-activation-environment --all
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -336,6 +337,7 @@ exec mako                               # notification daemon
 exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 exec avizo-service                      # volume popup
 exec nm-applet --indicator              # network manager
+exec blueman-applet                     # bluetooth tray applet
 exec pulseaudio --start
 exec lxpolkit                           # makes Gnome Keyring work
 include /etc/sway/config.d/*
