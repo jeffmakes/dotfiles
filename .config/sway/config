@@ -340,5 +340,6 @@ exec nm-applet --indicator              # network manager
 exec blueman-applet                     # bluetooth tray applet
 exec pulseaudio --start
 exec lxpolkit                           # makes Gnome Keyring work
+exec dropbox start
 include /etc/sway/config.d/*
 
