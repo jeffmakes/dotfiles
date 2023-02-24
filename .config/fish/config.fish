@@ -9,4 +9,5 @@ end
 set --export PATH $HOME/.local/bin $HOME/bin /var/lib/snapd/snap/bin /opt/ti/msp430/gcc/bin $PATH
 set --export PYTHONPATH /usr/lib64/kicad-nightly/lib64/python3.10/site-packages $PYTHONPATH
 set --export LD_LIBRARY_PATH /usr/lib64/kicad-nightly/lib64 $LD_LIBRARY_PATH
+set --export EDITOR nvim
 
