@@ -54,7 +54,7 @@ default_border normal 5
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/tools/sway/wallpapers/iceland1.jpg fill
+output * bg ~/tools/soft/sway/wallpapers/iceland1.jpg fill
 #
 # Example configuration:
 #
@@ -273,7 +273,7 @@ bindsym $mod+r mode "resize"
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% #increase sound volume
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume  @DEFAULT_SINK@ -10% #decrease sound volume
 #bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle # mute sound
-set $volumectl /home/jeff/tools/sway/avizo/volumectl
+set $volumectl /home/jeff/tools/soft/sway/avizo/volumectl
 bindsym XF86AudioRaiseVolume exec $volumectl raise
 bindsym XF86AudioLowerVolume exec $volumectl lower
 bindsym XF86AudioMute exec /home/jeff/projects/2020/sound-switcher/switcher.py
