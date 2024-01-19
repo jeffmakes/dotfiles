@@ -19,7 +19,8 @@ set $term gnome-terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -m -4 -show run -theme Arc-Dark | xargs swaymsg exec --
+#set $menu rofi -m -4 -show run -theme Arc-Dark | xargs swaymsg exec --
+set $menu rofi -m -4 -show combi -modes combi -combi-modes "window,drun,run" -theme Arc-Dark | xargs swaymsg exec --
 set $alt_menu rofi -m -4 -show drun -theme Arc-Dark | xargs swaymsg exec -- 
 
 # Lock command
@@ -105,6 +106,11 @@ input "1130:45201:PixArt_Cherry_USB_Optical_Mouse" {
      pointer_accel -0.1
 }
 
+# Set all mice (not touchpads) to left handed clicking
+input type:pointer {
+    left_handed enabled
+}
+
 input * xkb_layout "gb"
 #input *	xkb_options "caps:backspace"
 # I am now using caps2esc, see http://nelsonware.com/blog/2019/04/30/how-to-map-caps-lock-to-escape-and-control-on-fedora-via-caps2esc.html and https://gitlab.com/interception/linux/plugins/caps2esc
@@ -136,7 +142,7 @@ input *	xkb_options "caps:escape"
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+c reload 
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -298,7 +304,7 @@ bindsym $mod+Mod1+l exec $lock
 # Print screen
 
 #bindsym Print :exec "slurp | grim -g - ~/media/screenshots/$(date +%Y-%m-%d_%H:%M).png "
-bindsym Print :exec "slurp | grim -g - ~/media/screenshots/ss.png && notify-send 'Screenshot' 'Saved to ~/media/screenshots' "
+bindsym Print exec "time=$(date +%Y-%m-%d_%H:%M:%S);fn=~/media/screenshots/screenshot_$time.png;slurp | grim -g - $fn && notify-send -t 2000 'Screenshot' \~/media/screenshots/screenshot_$time.png"
 
 #
 # Status Bar:
@@ -331,8 +337,9 @@ bindsym $mod+Control+Return exec $ghost
 gaps inner 20
 
 # Start-up applications
-# NOTE: these won't run if you just press mod+shift+c - that only reloads the config.
-exec kanshi                             # automatic hotplug display configuration daemon. config in ~/.config/kanshi
+# NOTE: without exec_always, these won't run if you just press mod+shift+c - that only reloads the config.
+exec_always pkill kanshi; exec kanshi   # automatic hotplug display configuration daemon. config in ~/.config/kanshi.
+exec kanshi                             # 
 exec mako                               # notification daemon
 exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 exec avizo-service                      # volume popup
