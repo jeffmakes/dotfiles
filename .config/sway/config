@@ -303,8 +303,7 @@ bindsym $mod+Mod1+l exec $lock
 
 # Print screen
 
-#bindsym Print :exec "slurp | grim -g - ~/media/screenshots/$(date +%Y-%m-%d_%H:%M).png "
-bindsym Print exec "time=$(date +%Y-%m-%d_%H:%M:%S);fn=~/media/screenshots/screenshot_$time.png;slurp | grim -g - $fn && notify-send -t 2000 'Screenshot' \~/media/screenshots/screenshot_$time.png"
+bindsym Print exec "pgrep slurp &> /dev/null || (time=$(date +%Y-%m-%d_%H:%M:%S);fn=~/media/screenshots/screenshot_$time.png;slurp | grim -g - $fn && notify-send -t 2000 'Screenshot' ~/media/screenshots/screenshot_$time.png)"
 
 #
 # Status Bar:
