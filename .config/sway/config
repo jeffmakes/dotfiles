@@ -106,6 +106,11 @@ input "1130:45201:PixArt_Cherry_USB_Optical_Mouse" {
      pointer_accel -0.1
 }
 
+input "11267:12448:ELAN0709:00_04F3:30A0_Touchpad" {
+    tap enabled
+    tap_button_map lrm
+}
+
 # Set all mice (not touchpads) to left handed clicking
 input type:pointer {
     left_handed enabled
