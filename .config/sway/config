@@ -341,7 +341,7 @@ gaps inner 20
 
 # Start-up applications
 # NOTE: without exec_always, these won't run if you just press mod+shift+c - that only reloads the config.
-exec_always pkill kanshi; exec kanshi   # automatic hotplug display configuration daemon. config in ~/.config/kanshi.
+exec kanshi
 exec mako                               # notification daemon
 exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 exec avizo-service                      # volume popup
