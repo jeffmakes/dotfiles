@@ -1,0 +1,18 @@
+[Unit]                               
+Description=Bar app for Sway
+                                     
+DefaultDependencies=no
+After=sway-session.target
+
+[Service]
+ExecStart=waybar
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=sway-session.target
+
+
+
+
+
+
