@@ -5,6 +5,7 @@ DefaultDependencies=no
 After=sway-session.target
 
 [Service]
+Type=simple
 ExecStart=waybar
 IOSchedulingClass=idle
 
