@@ -327,7 +327,8 @@ bindsym Print exec "pgrep slurp &> /dev/null || (time=$(date +%Y-%m-%d_%H:%M:%S)
 #    }
 #}
 bar {
-    swaybar_command waybar
+    # Launching bar with systemd user service instead
+    #swaybar_command waybar
 }
 
 set $ghost alacritty --class "ghost" --title "ghost" # command to run when creating a "ghost" window
@@ -350,4 +351,3 @@ exec blueman-applet                     # bluetooth tray applet
 exec pulseaudio --start
 exec lxpolkit                           # makes Gnome Keyring work
 include /etc/sway/config.d/*
-
