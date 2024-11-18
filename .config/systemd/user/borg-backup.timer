@@ -1,0 +1,12 @@
+                                       
+[Unit]                               
+Description=Off-site backup service using Borg for deduplication
+                                     
+DefaultDependencies=no
+After=default.target
+
+[Timer]
+OnUnitActiveSec=4h
+
+[Install]
+WantedBy=default.target

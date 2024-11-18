@@ -1,0 +1,17 @@
+[Unit]                               
+Description=Off-site backup service using Borg for deduplication
+                                     
+DefaultDependencies=no
+After=default.target
+
+[Service]
+ExecStart=/home/jeff/bin/run-backup.sh
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=default.target
+
+
+
+
+
