@@ -14,3 +14,5 @@ set --export DO_NOT_TRACK 1
 
 alias ding='aplay ~/tools/soft/win95-sounds/DING.WAV >/dev/null 2>&1'
 alias tada='aplay ~/tools/soft/win95-sounds/TADA.WAV >/dev/null 2>&1'
+
+/home/jeff/.local/bin/mise activate fish | source # added by https://mise.run/fish
