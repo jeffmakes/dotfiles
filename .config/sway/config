@@ -344,7 +344,7 @@ gaps inner 20
 # NOTE: without exec_always, these won't run if you just press mod+shift+c - that only reloads the config.
 exec kanshi
 exec mako                               # notification daemon
-exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
+#exec syncthing -no-browser -home="/home/jeff/.config/syncthing"
 exec avizo-service                      # volume popup
 exec nm-applet --indicator              # network manager
 exec blueman-applet                     # bluetooth tray applet
